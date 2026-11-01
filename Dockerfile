@@ -1,7 +1,7 @@
 # syntax=docker/dockerfile:1
 
 # --- Build stage: resolve dependencies into a self-contained virtualenv ---
-FROM python:3.13-slim AS builder
+FROM python:3.15-slim AS builder
 
 COPY --from=ghcr.io/astral-sh/uv:0.13.6 /uv /uvx /bin/
 ENV UV_COMPILE_BYTECODE=1 \
@@ -20,7 +20,7 @@ RUN --mount=type=cache,target=/root/.cache/uv \
     uv sync --frozen --no-dev
 
 # --- Runtime stage: copy the virtualenv, run as a non-root user ---
-FROM python:3.13-slim AS runtime
+FROM python:3.15-slim AS runtime
 
 RUN groupadd --system --gid 1001 appuser \
     && useradd --system --uid 1001 --gid appuser --create-home appuser
