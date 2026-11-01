@@ -9,11 +9,11 @@ Every token that must be replaced when creating a new service from
 
 The example column uses a hypothetical **flight-alerts** service.
 
-| Token                    | Kind                       | Example replacement       |
-| ------------------------ | -------------------------- | ------------------------- |
-| `foundation-python-project-layout`  | distribution / image name  | `flight-alerts`           |
-| `foundation_python_project_layout`  | import package name        | `flight_alerts`           |
-| `foundation-python-project-layout`  | console script name        | `flight-alerts`           |
+| Token                              | Kind                      | Example replacement |
+| ---------------------------------- | ------------------------- | ------------------- |
+| `foundation-python-project-layout` | distribution / image name | `flight-alerts`     |
+| `foundation_python_project_layout` | import package name       | `flight_alerts`     |
+| `foundation-python-project-layout` | console script name       | `flight-alerts`     |
 
 ---
 
@@ -47,13 +47,13 @@ Common places: `pyproject.toml`, `src/**/*.py`, `tests/**/*.py`, `Dockerfile`,
 
 ### 4. Update `pyproject.toml`
 
-| Field                      | Value                     |
-| -------------------------- | ------------------------- |
-| `[project].name`           | `flight-alerts`           |
-| `[project].description`    | your service description  |
-| `[project.scripts]`        | `flight-alerts = "flight_alerts.__main__:main"` |
-| `[project.urls]`           | your repository URLs      |
-| `[tool.hatch.build...]`    | `packages = ["src/flight_alerts"]` |
+| Field                   | Value                                           |
+| ----------------------- | ----------------------------------------------- |
+| `[project].name`        | `flight-alerts`                                 |
+| `[project].description` | your service description                        |
+| `[project.scripts]`     | `flight-alerts = "flight_alerts.__main__:main"` |
+| `[project.urls]`        | your repository URLs                            |
+| `[tool.hatch.build...]` | `packages = ["src/flight_alerts"]`              |
 
 ### 5. Regenerate the lockfile
 

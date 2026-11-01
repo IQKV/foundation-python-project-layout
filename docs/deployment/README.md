@@ -32,19 +32,19 @@ docker compose up --build
 Inject configuration as environment variables (`APP_` prefix). Recommended
 defaults per environment:
 
-| Variable          | prd                |
-| ----------------- | ------------------ |
-| `APP_ENVIRONMENT` | `prd`              |
-| `APP_LOG_JSON`    | `true`             |
-| `APP_LOG_LEVEL`   | `INFO`             |
+| Variable          | prd    |
+| ----------------- | ------ |
+| `APP_ENVIRONMENT` | `prd`  |
+| `APP_LOG_JSON`    | `true` |
+| `APP_LOG_LEVEL`   | `INFO` |
 
 Never bake secrets or environment-specific values into the image.
 
 ### Health probes
 
-| Probe     | Path      | Use                             |
-| --------- | --------- | ------------------------------- |
-| Liveness  | `/health` | Restart the container if failing |
+| Probe     | Path      | Use                                  |
+| --------- | --------- | ------------------------------------ |
+| Liveness  | `/health` | Restart the container if failing     |
 | Readiness | `/ready`  | Remove from load balancer if failing |
 
 The image also declares a `HEALTHCHECK` that polls `/health`.
