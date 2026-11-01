@@ -1,0 +1,19 @@
+name: foundation-python-project-layout
+
+services:
+  app:
+    build:
+      context: .
+      target: runtime
+    image: iqkv/foundation-python-project-layout:local
+    container_name: foundation-python-project-layout-dev
+    # Optional: `cp .env.example .env` to override the defaults below.
+    env_file:
+      - path: .env
+        required: false
+    environment:
+      APP_ENVIRONMENT: local
+      APP_LOG_JSON: "true"
+    ports:
+      - "8080:8080"
+    restart: unless-stopped

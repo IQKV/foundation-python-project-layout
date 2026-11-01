@@ -1,0 +1,53 @@
+# Keep the build context small. pyproject.toml, uv.lock, README.md and src/ are
+# required by the multi-stage build; everything else is dev tooling.
+
+.git
+.github
+.idea
+.vscode
+.devcontainer
+
+# Python
+.venv
+.tmpvenv
+.uvcache
+__pycache__
+*.py[cod]
+.pytest_cache
+.mypy_cache
+.ruff_cache
+.coverage
+coverage.xml
+htmlcov/
+dist/
+build/
+*.egg-info
+
+# Project
+tests/
+docs/
+*.md
+!README.md
+.env*
+compose*.yaml
+scaffolding.md
+
+# Node tooling (git hooks only)
+node_modules
+package.json
+pnpm-lock.yaml
+
+# Meta
+Dockerfile
+.dockerignore
+.editorconfig
+.stylelintrc
+.stylelintignore
+.stylelintcache
+.gitignore
+.gitattributes
+.cursorignore
+commitlint.config.js
+AGENTS.md
+LICENSE
+CHANGELOG.md
